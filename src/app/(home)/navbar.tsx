@@ -1,8 +1,10 @@
+"use client";
+
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { Poppins } from "next/font/google"
 import Link from "next/link"
-
+import { usePathname } from "next/navigation"
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -10,9 +12,9 @@ const poppins = Poppins({
 })
 
 interface NavbarItemProps {
-    href:string;
+    href: string;
     children: React.ReactNode;
-    isActive?:boolean;
+    isActive?: boolean;
 };
 
 const NavbarItem = ({
@@ -22,6 +24,7 @@ const NavbarItem = ({
 }:NavbarItemProps) => {
     return (
         <Button
+            asChild
             variant="outline"
             className={cn(
                 "bg-transparent hover:bg-transparent rounded-full hover:border-primary border-transparent px-3.5 text-lg ",
@@ -46,6 +49,8 @@ const navbarItems = [
 
 
 export const Navbar = () => {
+    const pathname = usePathname();
+
     return (
         <nav className="h-20 flex border-b justify-between font-medium bg-white">
             <Link href="/" className="pl-6 flex items-center " >
@@ -59,6 +64,7 @@ export const Navbar = () => {
                     <NavbarItem 
                         key={item.href}
                         href={item.href}
+                        isActive={pathname === item.href}
                     >
                         {item.Children}
                     </NavbarItem>
@@ -66,4 +72,4 @@ export const Navbar = () => {
             </div>
         </nav>
     )
-}
+};

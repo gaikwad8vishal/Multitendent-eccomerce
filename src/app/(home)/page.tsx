@@ -1,10 +1,27 @@
-const HomePage = () => {
+"use client";
+
+
+import { Button } from "@/components/ui/button";
+import { useEffect } from "react"
+
+
+
+export default function Home() {
+    useEffect(() => {
+        console.log("rendered");
+    },[]);
+
+
     return (
-        <div>
-            this is home page 
+        <div className="p-4">
+            <div className="flex flex-col gap-y-4">
+                <div>
+                    <Button variant="elevated">
+                        I am a button
+                    </Button>
+                </div>
+                
+            </div>
         </div>
     )
-}
-
-
-export default HomePage;
+};

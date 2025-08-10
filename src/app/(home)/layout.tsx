@@ -1,3 +1,5 @@
+"use client";
+
 import { Navbar } from "./navbar";
 
 interface Props {
@@ -10,7 +12,7 @@ const Layout = ({children}:Props) => {
             <Navbar/>
             {children}
         </div>
-    )
+    );
 }
 
 
