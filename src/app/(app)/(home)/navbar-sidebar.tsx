@@ -38,10 +38,19 @@ export const NavbarSidebar = ({
                             key={item.href}
                             href={item.href}
                             className="w-full text-left p-4 hover:bg-black hover:text-white flex items-center text-base font-medium"
+                            onClick={() => onOpenChange(false)}
                         >
                             {item.children}
                         </Link>
                     ))}
+                    <div className="border-t">
+                        <Link href="/sign-in" className="w-full text-left p-4 hover:bg-black hover:text-white flex items-center text-base font-medium">
+                            Log in
+                        </Link>
+                        <Link href="/sign-up" className="w-full text-left p-4 hover:bg-black hover:text-white flex items-center text-base font-medium">
+                            Start selling
+                        </Link>
+                    </div>
                 </ScrollArea>
             </SheetContent>
         </Sheet>
