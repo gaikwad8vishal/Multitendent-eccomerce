@@ -12,3 +12,6 @@ export const GET = async () => {
 
   return Response.json(data)
 }
+
+
+//https://localhost:3000/my-routes

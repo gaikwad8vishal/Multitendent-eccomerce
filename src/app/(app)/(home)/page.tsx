@@ -4,7 +4,7 @@
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react"
 
-
+//https://localhost:3000/admin
 
 export default function Home() {
     useEffect(() => {
